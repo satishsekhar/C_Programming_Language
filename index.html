@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Language</title>
+     <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script>
+    var keys=[
+                ["Select C Keyword",""],
+                ["auto","This is the default storage class for all the variables declared inside a function or a block. Hence, the keyword auto is rarely used while writing programs in C language. Auto variables can be only accessed within the block/function they have been declared and not outside them (which defines their scope)."],
+                ["break","The break statement terminates the execution of the nearest enclosing do , for , switch , or while statement in which it appears. Control passes to the statement that follows the terminated statement."],
+                ["case","You can have any number of case statements within a switch. Each case is followed by the value to be compared to and a colon. The constant-expression for a case must be the same data type as the variable in the switch, and it must be a constant or a literal."],
+                ["char","The abbreviation char is used as a reserved keyword in some programming languages, such as C, C++, C#, and Java. It is short for character, which is a data type that holds one character (letter, number, etc.) of data. For example, the value of a char variable could be any one-character value, such as 'A', '4', or '#'."],
+                ["continue","The continue statement skips the current iteration of the loop and continues with the next iteration. Its syntax is: continue; The continue statement is almost always used with the if...else statement."],
+                ["const","The const keyword allows a programmer to tell the compiler that a particular variable should not be modified after the initial assignment in its declaration."],
+                ["do","do is a keyword in C and all I have seen is that it is only used with while."],
+                ["default","The default for Microsoft C is that the Microsoft extensions are enabled. Use the /Za compiler option to disable these extensions."],
+                ["double","The double datatype or double refers to that data type in the C language that helps in storing high-precision sorts of floating-point numbers or data in the computer memory."],
+                ["else",'In C programming, if and else are used to make decisions. if (i == 1) printf("i is 1.") else printf("i is not 1.") If the value of i is other than 1, the output will be : i is not 1. To learn more, visit C if...else statement.'],
+                ["enum","In C programming, an enumeration type (also called enum) is a data type that consists of integral constants. To define enums, the enum keyword is used. enum flag {const1, const2, ..., constN}; By default, const1 is 0, const2 is 1 and so on."],
+                ["extern",'“extern” keyword is used to extend the visibility of function or variable. By default the functions are visible throughout the program, there is no need to declare or define extern functions. It just increase the redundancy. Variables with “extern” keyword are only declared not defined.'],
+                ["for","C programming language is a machine-independent programming language that is mainly used to create many types of applications and operating systems such as Windows, and other complicated programs such as the Oracle database, Git, Python interpreter, and games and is considered a programming foundation in the process of ..."],
+                ["if","C has the following conditional statements: Use if to specify a block of code to be executed, if a specified condition is true. Use else to specify a block of code to be executed, if the same condition is false. Use else if to specify a new condition to test, if the first condition is false."],
+                ["goto","goto statement in C/C++ The goto statement is a jump statement which is sometimes also referred to as unconditional jump statement. The goto statement can be used to jump from anywhere to anywhere within a function."],
+                ["float","Float is a datatype which is used to represent the floating point numbers. It is a 32-bit IEEE 754 single precision floating point number ( 1-bit for the sign, 8-bit for exponent, 23*-bit for the value. It has 6 decimal digits of precision.2"],
+                ["int","In the C programming language, the keyword 'int' is used in a type declaration to give a variable an integer type. However, the fact that the type represents integers does not mean it can represent all integers. The size of an int variable is fixed and determined by the C implementation you use."],
+                ["long","A long int typically uses twice as many bits as a regular int, allowing it to hold much larger numbers. printf and scanf replace %d or %i with %ld or %li to indicate the use of a long int. long int may also be specified as just long."],
+                ["register","In the C programming language, register is a reserved word (or keyword), type modifier, storage class, and hint. The register keyword was deprecated in C++, until it became reserved and unused in C++17."],
+                ["return","A return statement ends the execution of a function, and returns control to the calling function. Execution resumes in the calling function at the point immediately following the call. A return statement can return a value to the calling function."],
+                ["signed","signed keyword is used for those variables which can take positive as well as negative values. unsigned keyword is used for those variables which can take only values which are zero or positive i.e., without - (negative sign). We can use signed and unsigned keywords with only 'int' and 'char' data types."],
+                ["static","A static function in C is a function that has a scope that is limited to its object file. This means that the static function is only visible in its object file. A function can be declared as static function by placing the static keyword before the function name."],
+                ["sizeof","The sizeof() function in C is a built-in function that is used to calculate the size (in bytes)that a data type occupies in ​the computer's memory. A computer's memory is a collection of byte-addressable chunks."],
+                ["short","The short, long, signed and unsigned keywords are type modifiers that alter the meaning of a base data type to yield a new type."],
+                ["struct","Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure. Unlike an array, a structure can contain many different data types (int, float, char, etc.)."],
+                ["switch","The switch statement in C is an alternate to if-else-if ladder statement which allows us to execute multiple operations for the different possibles values of a single variable called switch variable. Here, We can define various statements in the multiple cases for the different values of a single variable."],
+                ["typedef","typedef is a reserved keyword in the programming languages C and C++. It is used to create an additional name (alias) for another data type, but does not create a new type, except in the obscure case of a qualified typedef of an array type where the typedef qualifiers are transferred to the array element type."],
+                ["union","A union is a special data type available in C that allows to store different data types in the same memory location. You can define a union with many members, but only one member can contain a value at any given time."],
+                ["void","The void type, in several programming languages derived from C and Algol68, is the return type of a function that returns normally, but does not provide a result value to its caller. Usually such functions are called for their side effects, such as performing some task or writing to their output parameters."],
+                ["while",'A "While" Loop is used to repeat a specific block of code an unknown number of times, until a condition is met. For example, if we want to ask a user for a number between 1 and 10, we don\'t know how many times the user may enter a larger number, so we keep asking "while the number is not between 1 and 10".'],
+                ["volatile","C's volatile keyword is a qualifier that is applied to a variable when it is declared. It tells the compiler that the value of the variable may change at any time--without any action being taken by the code the compiler finds nearby."],
+                ["unsigned","The unsigned keyword is a data type specifier, that makes a variable only represent non-negative integer numbers (positive numbers and zero). It can be applied only to the char , short , int and long types."]
+            ];
+            function showKeywords()
+            {
+                //Show The All Keywords of C Language.
+                var d=document.getElementById("C_Keywords");
+                d.style.display="block";
+                //Add All Keywords Name In Select Tag or Drop Down List
+                var options="";
+                var i;
+                for(i=0;i<keys.length;i++)
+                {
+                    options=options+"<option value=\""+i+'">'+keys[i][0]+'</option>';
+        
+                }
+
+                //Set option in selected tag
+                document.getElementById("keys").innerHTML=options;
+
+            }
+
+            function displayInfo()
+            {
+                //Get the selected item value
+                var selectedKeyIndex=parseInt(document.getElementById("keys").value);
+                //alert("You have selected: "+selectedKeyIndex);
+
+                //Set the Details On Lebel of Selected Keywords
+                document.getElementById("1").innerHTML=keys[selectedKeyIndex][0];
+                document.getElementById("2").innerHTML=keys[selectedKeyIndex][1];
+            }
+</script>
+</head>
+<body onload="showKeywords();">
+    <div class="container-fluid">
+        
+        <div id="C_Keywords" style="display: none;">
+
+            <div class="row">
+                <div class="col-sm-8 border">
+                    <h2 class="bg-primary text-light" style="text-align: justify;"">What is C Programming Language? Basics, Introduction, History.</h2>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="c_photo.jpg" alt="Image" height="220" width="80%" style="border-radius: 5px; border: 2px solid;"/>
+                        </div>
+                        <div class="col-sm-8">
+                            <h6>Let’s learn about C language in this basics of C language tutorial:</h6>
+                            <h3>What is C Programming Langauge?</h3>
+                            <p style="text-align:justify;"><b>C</b> is a general-purpose programming language that is extremely popular, simple, and flexible to use. It is a structured programming language that is machine-independent and extensively used to write various applications, Operating Systems like Windows, and many other complex programs like Oracle database, Git, Python interpreter, and more.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p style="text-align:justify;">It is said that ‘C’ is a god’s programming language. One can say, C is a base for the programming. If you know ‘C,’ you can easily grasp the knowledge of the other programming languages that uses the concept of ‘C’</p>
+                                <p style="text-align:justify;">It is essential to have a background in computer memory mechanisms because it is an important aspect when dealing with the C programming language.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>History of C language.</h3>
+                                <p style="text-align: justify;">The base or father of programming languages is ‘ALGOL.’ It was first introduced in 1960. ‘ALGOL’ was used on a large basis in European countries. ‘ALGOL’ introduced the concept of structured programming to the developer community. In 1967, a new computer programming language was announced called as ‘BCPL’ which stands for Basic Combined Programming Language. BCPL was designed and developed by Martin Richards, especially for writing system software. This was the era of programming languages. Just after three years, in 1970 a new programming language called ‘B’ was introduced by Ken Thompson that contained multiple features of ‘BCPL.’ This programming language was created using UNIX operating system at AT&T and Bell Laboratories. Both the ‘BCPL’ and ‘B’ were system programming languages.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="DennisRitchie.jpg" alt="Dennis Ritche" height="220" width="80%" style="border: 2px solid blue; border-radius: 5px;">
+                            </div>
+                            <div class="col-sm-8">
+                                <p style="text-align: justify;">In 1972, a great computer scientist Dennis Ritchie created a new programming language called ‘C’ at the Bell Laboratories. It was created from ‘ALGOL’, ‘BCPL’ and ‘B’ programming languages. ‘C’ programming language contains all the features of these languages and many more additional concepts that make it unique from other languages.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p style="text-align:justify;">‘C’ is a powerful programming language which is strongly associated with the UNIX operating system. Even most of the UNIX operating system is coded in ‘C’. Initially ‘C’ programming was limited to the UNIX operating system, but as it started spreading around the world, it became commercial, and many compilers were released for cross-platform systems. Today ‘C’ runs under a variety of operating systems and hardware platforms. As it started evolving many different versions of the language were released. At times it became difficult for the developers to keep up with the latest version as the systems were running under the older versions. To assure that ‘C’ language will remain standard, American National Standards Institute (ANSI) defined a commercial standard for ‘C’ language in 1989. Later, it was approved by the International Standards Organization (ISO) in 1990. ‘C’ programming language is also called as ‘ANSI C’.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12" style="text-align:center;">
+                                <img src="WhatisCProg3.jpg" alt="Image" height="500" width="60%"/>
+                                <p>History Of C</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p style="text-align:justify;">Languages such as C++/Java are developed from ‘C’. These languages are widely used in various technologies. Thus, ‘C’ forms a base for many other languages that are currently in use.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>C Basic Commands</h3>
+                            <h6>Following are the basic commands in c programming language.</h6>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table text text-justify table-hover">
+                                    <thead>
+                                        <tr><th>C Basic Commands</th> <th>Explaination</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#include &lt;stdio.h&gt;</td>
+                                            <td>This command includes standard input output headers files(stdio.h) from library the C library before compiling a C porgram.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>int main()</td>
+                                            <td>It is the main function from where c program execution begins</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{</td>
+                                            <td>Indicates the begining of the main function</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/*_some_comments_*/</td>
+                                            <td>Whatever written inside this command "/* */" inside a C program, it will not be considered for compilation and execution.</td>
+                                        </tr>    
+                                        <tr>
+                                            <td>printf("Hello World");</td>
+                                            <td>This command prints the output on the screen.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>getch();</td>
+                                            <td>This command is used for any character input on the screen.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>return 0;</td>
+                                            <td>This command is used to terminate C program (main function), and its return 0.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>}</td>
+                                            <td>It is used to indicates the end of the function.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-sm-12 border-radius">
+                            <h3>How C Programming Language Works?</h3>
+                            <p>C is a compiled language. A compiler is a special tool that compiles the program and converts it into the object file which is machine readable. After the compilation process, the linker will combine different object files and creates a single executable file to run the program. The following diagram shows the execution of a 'C' program.</p>
+                            <img src="WhatisCProg4.jpg" alt="Image"  width="85%" height="220"/>
+                            <p>Nowadays, various compilers are available online, and you can use any of those compilers. The functionality will never differ and most of the compilers will provide the features required to execute both 'C' and 'C++' programs.</p>
+                            <h6>Following is the list of popular compilers available online:</h6>
+                            <ul>
+                                <li>Clang compiler</li>
+                                <li>MinGW compiler (Minimalist GNU fo Windows)</li>
+                                <li>Portable</li>
+                                <li>Turbo C</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+                <div class="col-sm-4 text-center border-radius">
+                    <h2 class="bg-primary text-light">C Keywords and Identifiers</h2>
+                    <select id="keys" class="form-control form-control-lg" onchange="displayInfo();"></select>
+                    <div class="row">
+                        <div class="col-sm-12">
+                                <p><u>Keyword</u></p>
+                                <h3 id="1">Select</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12" style="text-align:justify;">
+                                <p id="2" class="bg-info text-dark"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row border" style="text-align:justify;">
+                        <div class="col-sm-12">
+                            <h3>Where is C used? Key Applications</h3>
+                            <ol>
+                                <li>'C' lalnguage is widely used in embedded systems.</li>
+                                <li>It is used for developing system applications.</li>
+                                <li>It is widely used for developing desktop applications.</li>
+                                <li>Most of the applications by Adobe are developed using 'C' programming language.</li>
+                                <li>It is used for developing browsers and their extensions. Google's Chromium is built using 'C' programming language.</li>
+                                <li>It is used to developed database. My SQL is the most popular database software which is built using 'C'.</li>
+                                <li>It is used in developing an operation system. Operating systems such as Apple's OS X, Microsoft,s Windows. and Symbian are developed using 'C' language. It is used for developing desktop as well as as mobile pohone's operating system.</li>
+                                <li>It is used for compiler production.</li>
+                                <li>It is widely used in IOT applications.</li>
+                            </ol>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>Summary of C</h3>
+                                <ul>
+                                    <li>'C' was developed by Dennis Ritchie in 1972.</li>
+                                    <li>It is a robust language.</li>
+                                    <li>It is a low programming level language close to machine language.</li>
+                                    <li>It is widely used in the software development field.</li>
+                                    <li>It is a procedure and structure oriented language.</li>
+                                    <li>It has the full support of various operation systems ans hardware platforms.</li>
+                                    <li>Many compilers are available for executing programs written in 'C'.</li>
+                                    <li>A linker links all the object files together and creates one executable file.</li>
+                                    <li>It is highly portable.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>Features of C Language.</h3>
+                                <p>C is a procedural programming language. It was initially developed by Dennis Ritchie in the year 1972. It was mainly developed as a system programming language to write an operating system. The main features of C language include low-level access to memory, a simple set of keywords, and a clean style, these features make C language suitable for system programmings like an operating system or compiler development.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <img src="features-of-c.jpg" style="height:100%; width:90%;"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>Features of C Programming Language.</h5>
+                                <ul>
+                                    <li>Procedural Language</li>
+                                    <li>Fast and Efficient</li>
+                                    <li>Modularity</li>
+                                    <li>Statically Type</li>
+                                    <li>General-Purpose Language</li>
+                                    <li>Rich set of built-in operators</li>
+                                    <li>Libararies with rich Functions</li>
+                                    <li>Middle-Level Language</li>
+                                    <li>Protability</li>
+                                    <li>Easy to Extend</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>Why learn C Language?</h3>
+                                <p>As we studied earlier, ‘C’ is a base language for many programming languages. So, learning ‘C’ as the main language will play an important role while studying other programming languages. It shares the same concepts such as data types, operators, control statements and many more. ‘C’ can be used widely in various applications. It is a simple language and provides faster execution. There are many jobs available for a ‘C’ developer in the current market.</p>
+                                <p>‘C’ is a structured programming language in which program is divided into various modules. Each module can be written separately and together it forms a single ‘C’ program. This structure makes it easy for testing, maintaining and debugging processes.</p>
+                                <p>‘C’ contains 32 keywords, various data types and a set of powerful built-in functions that make programming very efficient.</p>
+                                <p>Another feature of ‘C’ programming is that it can extend itself. A ‘C’ program contains various functions which are part of a library. We can add our features and functions to the library. We can access and use these functions anytime we want in our program. This feature makes it simple while working with complex programming.</p>
+                                <p>Various compilers are available in the market that can be used for executing programs written in this language.</p>
+                                <p>It is a highly portable language which means programs written in ‘C’ language can run on other machines. This feature is essential if we wish to use or execute the code on another computer.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+
+                    
+                </div>
+   
+            </div>
+            
+
+
+            
+        </div>
+    </div>
+    
+</body>
+</html>
